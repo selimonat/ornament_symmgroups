@@ -6,3 +6,5 @@ xlrd
 seaborn
 geopy
 sklearn
+folium
+
