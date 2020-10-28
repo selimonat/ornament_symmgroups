@@ -6,17 +6,31 @@ clf;
 % type help pdist to see other options.
 DISTANCE_METRIC = 'euclidean'%'correlation'
 % 
-MDS_TYPE = 'classical' % classical uses cmdscale function (classical mds), 
+MDS_TYPE = 'not_classical' % classical uses cmdscale function (classical mds), 
 % in order to use mdscale function change MDS_TYPE to something else.
 % read their documentation with help cmdscale or help mdscale
+WHICH_DATA = 'YUNAN' %(or YUNAN) 
 
 
 % READ DATA
 fprintf('importing data\n');
-data = xlsread('symm_groups.xlsx');
+if strcmp(WHICH_DATA,'PREPRINTS')
+   ORDER = [4,3,2,5,6]
+   [data,headers,dummy] = xlsread('data_Preprints.xlsx');   
+   headers = {headers{1,2:end}};
+   headers = headers(ORDER);
+   % discard useless last rows
+   data = data(1:17,ORDER);   
+elseif strcmp(WHICH_DATA,'YUNAN')
+   ORDER = [4,3,2,5,6,7];
+   [data,headers,dummy] = xlsread('data_paper_Greek.xlsx');
+   headers = {headers{1,2:end}};
+   headers = headers(ORDER);
+   % discard useless last rows
+   data = data(1:17,ORDER);   
+end
 fprintf('imported data looks like this:\n');
-% discard useless last rows
-data = data(1:17,[4,3,2,5,6]);
+
 fprintf('the size of the data (symmetry groups X cultures)\n');
 size(data);
 
@@ -29,8 +43,11 @@ dissimilarities = pdist(data',DISTANCE_METRIC);
 % DISPLAY DISSIMILARITY MATRIX
 matrix_form     = squareform(dissimilarities);
 figure(1);clf;subplot(3,4,1);
-imagesc(matrix_form);colorbar;
-title('Dissimilarity Matrix with original data')
+h = imagesc(matrix_form);colorbar;
+set(gca,'fontsize',16)
+yticks(1:length(headers));yticklabels(headers);
+xticks(1:length(headers));xticklabels(headers);xtickangle(45)
+title(sprintf(['Dissimilarity Matrix\nwith original data']),'fontsize',12)
 %
 if strcmp(MDS_TYPE,'classical')
     fprintf('Using classical')
@@ -44,12 +61,14 @@ stress
 maxerr2 = mean(abs(dissimilarities - pdist(Y(:,1),DISTANCE_METRIC)));
 figure(1);subplot(3,4,2);
 imagesc(squareform( pdist(Y(:,1),DISTANCE_METRIC)));colorbar;
+
 title(sprintf(['Dissimilarity Matrix with 1 MDS dimensions \n mean(abs(Error)):' mat2str(maxerr2,3) ]))
 subplot(3,4,3);
 imagesc(squareform(abs(dissimilarities - pdist(Y(:,1),DISTANCE_METRIC))));colorbar;
 title(sprintf(['Reconstruction Error (dimen = 1)']));
 subplot(3,4,4);
-plot(Y(:,1),'o');title('MDS plot');
+plot(Y(:,1),'o');title('MDS plot (1 dimen)');
+xticks(1:length(headers));xticklabels(headers);xtickangle(45)
 
 % How good we approximate the original dissimilarity matrix when using only
 % 2 dimensions
@@ -61,7 +80,10 @@ subplot(3,4,7);
 imagesc(squareform(abs(dissimilarities - pdist(Y(:,1:2),DISTANCE_METRIC))));colorbar;
 title(sprintf(['Reconstruction Error (dimen = 2)']));
 subplot(3,4,8);
-plot(Y(:,1),Y(:,2),'o');title('MDS plot');
+plot(Y(:,1),Y(:,2),'r+');title('MDS plot (2 dimen)');
+for i = [1:length(headers)]
+    text(Y(i,1),Y(i,2),headers{i},'fontsize',16)
+end
 
 % How good we approximate the original dissimilarity matrix when using only
 % 3 dimension
