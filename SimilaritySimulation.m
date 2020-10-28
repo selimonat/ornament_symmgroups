@@ -22,7 +22,7 @@ dis_cos = pdist([x;y],'cosine');
 dis_euc = pdist([x;y],'euclidean');
 dis_cor = 1-pdist([x;y],'correlation');
 
-title(sprintf('%s\nCosine Dissimilarity: %.2f\nEuclidean Dissimilarity: %.2f\nCorrelation: %.2f\n',title_addon,dis_cos,dis_euc,dis_cor),'fontsize',16)
+title(sprintf('%s\nCosine Dissimilarity: %.2f\nEuclidean Dissimilarity: %.2f\n1 - Correlation: %.2f\n',title_addon,dis_cos,dis_euc,dis_cor),'fontsize',16)
 axis square
 
 
