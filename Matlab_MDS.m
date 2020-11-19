@@ -12,6 +12,7 @@ MDS_TYPE = 'nonclassical' % classical uses cmdscale function (classical mds),
 % in order to use mdscale function change MDS_TYPE to something else.
 % read their documentation with help cmdscale or help mdscale
 CRITERION  = 'metricstress'
+REPLICATES = 100
 
 % READ DATA
 fprintf('importing data\n');
@@ -59,7 +60,7 @@ if strcmp(MDS_TYPE,'classical')
     [Y,stress] = cmdscale(dissimilarities,DIMEN);
 elseif strcmp(MDS_TYPE,'nonclassical')
     fprintf('Using non-classical metric')
-    [Y,stress] = mdscale(dissimilarities,DIMEN,'criterion',CRITERION);
+    [Y,stress] = mdscale(dissimilarities,DIMEN,'criterion',CRITERION,'replicates',REPLICATES,'start','random','options',statset('Display','final','MaxIter',10000,'tolx',10^-24));
 end
 stress
 
@@ -83,7 +84,7 @@ if strcmp(MDS_TYPE,'classical')
     [Y,stress] = cmdscale(dissimilarities,DIMEN );
 elseif strcmp(MDS_TYPE,'nonclassical')
     fprintf('Using non-classical metric')
-    [Y,stress,disparities] = mdscale(dissimilarities,DIMEN,'criterion',CRITERION,'Replicates',100,'start','random','options',statset('Display','final','MaxIter',10000));
+    [Y,stress,disparities] = mdscale(dissimilarities,DIMEN,'criterion',CRITERION,'Replicates',REPLICATES,'start','random','options',statset('Display','final','MaxIter',10000,'tolx',10^-24));
 end
 stress
 maxerr3 = mean(abs(dissimilarities - pdist(Y(:,1:2),DISTANCE_METRIC)));
@@ -107,7 +108,7 @@ if strcmp(MDS_TYPE,'classical')
     [Y,stress] = cmdscale(dissimilarities,DIMEN );
 elseif strcmp(MDS_TYPE,'nonclassical')
     fprintf('Using non-classical metric')
-    [Y,stress] = mdscale(dissimilarities,DIMEN,'criterion',CRITERION,'Replicates',10,'start','random','options',statset('Display','final','MaxIter',10000));
+    [Y,stress] = mdscale(dissimilarities,DIMEN,'criterion',CRITERION,'Replicates',REPLICATES,'start','random','options',statset('Display','final','MaxIter',10000));
 end
 stress
 
