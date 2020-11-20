@@ -20,7 +20,7 @@ dendrogram(Z,'Labels', headers,'orientation', 'top');set(gca,'fontsize',20)
 
 cophenet(Z,pdist(data','euclidean'))
 
-inconsistent(Z,3)
+inconsistent(Z,2)
 
 c = cluster(Z,'cutoff',.4)
 
