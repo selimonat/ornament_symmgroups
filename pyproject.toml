@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "ornament_symmgroups"
+version = "0.1.0"
+description = "Replication Repository for ornament analyses"
+authors = ["Selim Onat, Mehmet Erbudak"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+matplotlib = "^3.3.3"
+numpy = "^1.19.4"
+xlrd = "^1.2.0"
+seaborn = "^0.11.0"
+geopy = "^2.0.0"
+sklearn = "^0.0"
+folium = "^0.11.0"
+joblib = "^0.17.0"
+jupyterthemes = "^0.20.0"
+statsmodels = "^0.12.1"
+jupyter-contrib-nbextensions = "^0.5.1"
+jupyter_nbextensions_configurator = "^0.4.1"
+rise = "^5.7.1"
+openpyxl = "^3.0.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
