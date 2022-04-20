@@ -2,11 +2,13 @@
 
 Code repository to reproduce analyses and figures published in the following papers:
 
-- Similarity in Symmetry Groups of Ornaments as a Measure for Cultural Interactions in Medieval Times  
-  *Erbudak M and Onat S*, 2020, **Preprints** [link](https://www.preprints.org/manuscript/202008.0031/v1)
+- **Similarity in Symmetry Groups of Ornaments as a Measure for Cultural Interactions in Medieval Times**   
+  *Erbudak M and Onat S*, **Preprints**, 2020, [link](https://www.preprints.org/manuscript/202008.0031/v1)
 
-- The Role of the Greco-Roman Practice as a Progenitor of the Armenian and Eastern Roman Ornamental Art   
-  *Erbudak M and Onat S*, 2020, **Arxiv** [link](https://arxiv.org/abs/2011.10973)
+- **The Role of the Greco-Roman Practice as a Progenitor of the Armenian and Eastern Roman Ornamental Art**   
+  *Erbudak M and Onat S*, **Arxiv**, 2020, [link](https://arxiv.org/abs/2011.10973)
+  
+  <img src="figure_dendrogram_paper_Greek.png" alt="drawing" width="400"/>
 
 # Setup: 
 
