@@ -19,13 +19,15 @@ In the second step you need to run `make setup` to install all the packages requ
 
 # Content 
 
-Preprints Manuscript:
-Data: data_Preprints.xlsx
-Analysis: notebook_analysis_Preprints.ipynb
+## [Preprints Manuscript](https://www.preprints.org/manuscript/202008.0031/v1):
+### Title: Similarity in Symmetry Groups of Ornaments as a Measure for Cultural Interactions in Medieval Times
+### Data: data_Preprints.xlsx
+### Analysis: notebook_analysis_Preprints.ipynb
 
-Arxiv Manuscript:
-Data: data_paper_Arxiv.xlsx
-Analysis: notebook_paper_Arxiv.ipynb
+## [Arxiv Manuscript](https://arxiv.org/abs/2011.10973):
+### Title: The Role of the Greco-Roman Practice as a Progenitor of the Armenian and Eastern Roman Ornamental Art
+### Data: data_paper_Arxiv.xlsx
+### Analysis: notebook_paper_Arxiv.ipynb
 
 
 # Analysis 
