@@ -4,12 +4,22 @@ Code repository to reproduce analyses and figures published in the following pap
 
 - **Similarity in Symmetry Groups of Ornaments as a Measure for Cultural Interactions in Medieval Times**   
   *Erbudak M and Onat S*, **Preprints**, 2020, [link](https://www.preprints.org/manuscript/202008.0031/v1)
+  <figure>
+  <img src="figure_mosaic_example02.png" alt="drawing" width="300"/>
+  <img src="figure_mosaic_examples.png" alt="drawing" width="300"/>
+  <br>
+  <sub><figcaption>Floor mosaics with two-dimensional, periodic ornaments found (upper row) in the Terrace Houses in Ephesus and (lower row) in the Zeugma Museum.</figcaption></sub>
+  </figure>
+
 
 - **The Role of the Greco-Roman Practice as a Progenitor of the Armenian and Eastern Roman Ornamental Art**   
   *Erbudak M and Onat S*, **Arxiv**, 2020, [link](https://arxiv.org/abs/2011.10973)
+  <figure>
+  <img src="figure_dendrogram_paper_Greek.png" alt="drawing" width="500"/>
+  <br>
+  <sub><figcaption>A dendogram based on the dissimilarities between the symmetry groups of medieval cultures.</figcaption></sub>
+  </figure>
   
-  <img src="figure_dendrogram_paper_Greek.png" alt="drawing" width="400"/>
-
 # Setup: 
 
 Analyses were ran using `Python 3.6.6`, therefore this is the recommended Python interpreter version for this repository.
@@ -26,15 +36,15 @@ In the second step you need to run `make setup` to install all the packages requ
 
 - **Preprints Manuscript**
   - **DataFile**  
-      data_Preprints.xlsx  
-  - **Analysis Notebook**
-      notebook_analysis_Preprints.ipynb  
+      `data_Preprints.xlsx  `
+  - **Analysis Notebook**  
+      `notebook_analysis_Preprints.ipynb  `
 
 - **Arxiv Manuscript**  
   - **Data File**  
-    data_paper_Arxiv.xlsx  
+    `data_paper_Arxiv.xlsx  `
   - **Analysis Notebook**  
-    notebook_paper_Arxiv.ipynb  
+    `notebook_paper_Arxiv.ipynb  `
 
 
 # Analysis 
