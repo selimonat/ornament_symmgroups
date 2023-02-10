@@ -21,7 +21,7 @@ idna==2.10; python_version >= "3.5" and python_full_version < "3.0.0" or python_
 importlib-metadata==2.0.0; python_version >= "3.5" and python_full_version < "3.0.0" and python_version < "3.8" or python_version < "3.8" and python_version >= "3.5" and python_full_version >= "3.5.0"
 ipykernel==5.3.4; python_version >= "3.5"
 ipython-genutils==0.2.0; python_version >= "3.5"
-ipython==7.16.1; python_version >= "3.6"
+ipython==8.10.0; python_version >= "3.6"
 jdcal==1.4.1; python_version >= "3.6"
 jedi==0.17.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 jinja2==2.11.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
